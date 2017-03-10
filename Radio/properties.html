@@ -1,0 +1,44 @@
+<!-- Base feeds for a the Radio Properties Controls-->
+<template id="block-custom-properties">
+  <p></p><p></p>
+  <div class="ui inverted form">
+    <h4>Event Modes</h4>
+    <div class="ui inverted divider"></div>
+    {{#each event_modes.items}}
+    <div class="field">
+        <div data-source="{{./../event_modes.property}}" data-value={{value}} class="ui toggle checkbox ">
+          {{#if selected}}
+          <input type="checkbox" tabindex="0" class="hidden" checked>
+          {{else}}
+          <input type="checkbox" tabindex="0" class="hidden">
+          {{/if}}
+          <label>{{name}}</label>
+        </div>
+      </div>
+    {{/each}}
+    <h4>Advanced Configuration</h4>
+    <div class="ui inverted divider"></div>
+    {{#each element}}
+      {{#if numeric}}
+      <div class="field inline">
+        <label class="">{{name}}</label>
+        <div data-source="{{property}}" data-value={{value}} class="ui icon input mini">
+          <input type="text" placeholder="Time in ms" value="{{ value }}" {{disabled}}>
+          <i class="icon"></i>
+        </div>
+      </div>
+      {{else}}
+      <div class="field">
+        <div data-source="{{property}}" data-value={{value}} class="ui toggle checkbox ">
+          {{#if selected}}
+          <input type="checkbox" tabindex="0" class="hidden" checked>
+          {{else}}
+          <input type="checkbox" tabindex="0" class="hidden">
+          {{/if}}
+          <label>{{name}}</label>
+        </div>
+      </div>
+      {{/if}}
+    {{/each}}
+  </div>
+</template>
