@@ -1,4 +1,4 @@
-define(['HubLink', 'PropertiesPanel', 'Easy'], function(Hub, PropertiesPanel, easy){
+define(['HubLink', 'PropertiesPanel', 'Easy'], function(Hub, PropertiesPanel, easy) {
 
   var actions = [];
   var inputs = [];
@@ -111,7 +111,7 @@ define(['HubLink', 'PropertiesPanel', 'Easy'], function(Hub, PropertiesPanel, ea
   }
 
   function unpascal(str){
-    return str.replace(/(?:^|\.?)([A-Z])/g, function (x,y){return " " + y}).replace(/^_/, "");
+    return str.replace(/(?:^|\.?)([A-Z])/g, function (x,y){return " " + y;}).replace(/^_/, "");
   }
 
   function setSettings(retries){
@@ -144,7 +144,7 @@ define(['HubLink', 'PropertiesPanel', 'Easy'], function(Hub, PropertiesPanel, ea
             reject(err);
           }
         });  
-      }
+      };
           
       loadNow();
     });
@@ -179,7 +179,7 @@ define(['HubLink', 'PropertiesPanel', 'Easy'], function(Hub, PropertiesPanel, ea
             reject(err);
           }
         });  
-      }
+      };
           
       loadNow();
     });
